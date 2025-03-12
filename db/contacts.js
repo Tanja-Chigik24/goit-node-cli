@@ -1,8 +1,8 @@
-const fs = require("fs").promises;
-const path = require("path");
-const { nanoid } = require("nanoid");
+import fs from "fs/promises";
+import path from "node:path";
+import { nanoid } from "nanoid";
 
-const contactsPath = path.join(__dirname, "contacts.json");
+const contactsPath = path.join("db", "contacts.json");
 
 const listContacts = async () => {
   // Повертає масив контактів.
@@ -40,9 +40,10 @@ const removeContact = async (contactId) => {
   return result;
 };
 
-module.exports = {
+const contacts = {
   listContacts,
   getContactById,
   addContact,
   removeContact,
 };
+export default contacts;

@@ -1,5 +1,5 @@
-const contacts = require("./contacts");
-const { program } = require("commander");
+import contacts from "./db/contacts.js";
+import { program } from "commander";
 
 // TODO: рефакторити
 const invokeAction = async ({ action, id, name, email, phone }) => {
